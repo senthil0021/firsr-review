@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Form with Various Input Types</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <form action="#" method="post">
+    <h1>STUDENT INFORMATION</h1>
+    <label for="text_input">NAME:</label><br>
+    <input type="text" id="text_input" name="text_input"><br><br>
+
+    <label for="roll_number">Roll Number</label><br>
+    <input type="text" id="roll_number" name="roll_number"><br><br>
+
+    <label for="email_input">Email ID:</label><br>
+    <input type="email" id="email_input" name="email_input"><br><br>
+
+    <label for="number_input">Phone Number</label><br>
+    <input type="tel" id="number_input" name="number_input"><br><br>
+
+    <label for="date_input">DOB:</label><br>
+    <input type="date" id="date_input" name="date_input"><br><br>
+
+    <label for="radio_input_1">BIT:</label>
+    <input type="radio" id="radio_input_1" name="radio_group" value="radio_value_1"><br><BR>
+    <label for="radio_input_2">SKCT:</label>
+    <input type="radio" id="radio_input_2" name="radio_group" value="radio_value_2"><br><br>
+
+    <label for="checkbox_input">Software Developer role:</label><br>
+    <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_value"><br><br>
+    <label for="checkbox_input">Software Tester role:</label><br>
+    <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_value"><br><br>
+    <label for="checkbox_input">Both :</label><br>
+    <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_value"><br><br>
+    <label for="file_input">Resume</label><br>
+    <input type="file" id="file_input" name="file_input"><br><br>
+
+    <label for="select_input">Preferred Location</label><br>
+    <select id="select_input" name="select_input">
+      <option value="1">Chennai </option>
+      <option value="2">Banglore </option>
+      <option value="3">kochin</option>
+    </select><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
