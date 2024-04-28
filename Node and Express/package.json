@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "expressjs001": "^1.0.0",
+    "lodash": "^4.17.21",
+    "mon": "^0.0.8",
+    "node": "^18.20.2",
+    "nodemon": "^3.1.0",
+    "y": "^0.3.2"
+  },
+  "name": "node-and-express",
+  "version": "1.0.0",
+  "main": "fs-async.js",
+  "scripts": {
+    "start": "nodemon link.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
