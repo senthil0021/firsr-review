@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="booking-page">
+        <div class="container">
+            <h1>Room Booking Details</h1>
+            <div id="booking-details"></div>
+            <div class="form-wrapper">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="room-type">Room Type:</label>
+                        <select id="room-type" name="roomtype" required>
+                            <option value="">Select Room Type</option>
+                            <option value="single">Single Room</option>
+                            <option value="double">Double Room</option>
+                            <option value="suite">Suite</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="num-rooms">Number of Rooms:</label>
+                        <input type="number" id="num-rooms" name="num-rooms" min="1" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="check-in">Check-in Date:</label>
+                        <input type="date" id="check-in" name="check-in" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="check-out">Check-out Date:</label>
+                        <input type="date" id="check-out" name="check-out" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests:</label>
+                        <input type="number" id="guests" name="guests" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests:</label>
+                        <textarea id="special-requests" name="special-requests"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment">Payment Method:</label>
+                        <select id="payment" name="payment" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+
+                    <div id="credit-card-details" class="form-group" style="display: none;">
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" required>
+                        <label for="expiry-date">Expiry Date:</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" pattern="[0-9]{3}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                    </div>
+
+                    <button class="btn" type="submit">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve query parameters from the URL
+        const queryParams = new URLSearchParams(window.location.search);
+
+        // Get the form data from the query parameters
+        const name = queryParams.get('name');
+        const phone = queryParams.get('phone');
+        const email = queryParams.get('email');
+
+        // Display the form data on the page
+        const bookingDetailsElement = document.getElementById('booking-details');
+        bookingDetailsElement.innerHTML = `
+            <p>Name: ${name}</p>
+            <p>Phone: ${phone}</p>
+            <p>Email: ${email}</p>
+        `;
+
+        // Show/hide credit card details based on payment method selection
+        const paymentSelect = document.getElementById('payment');
+        const creditCardDetails = document.getElementById('credit-card-details');
+
+        paymentSelect.addEventListener('change', function() {
+            if (this.value === 'credit-card') {
+                creditCardDetails.style.display = 'block';
+            } else {
+                creditCardDetails.style.display = 'none';
+            }
+        });
+
+        // Add form submission event listener for roombooking.html
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Handle form submission logic here
+        });
+    </script>
+</body>
+</html>
